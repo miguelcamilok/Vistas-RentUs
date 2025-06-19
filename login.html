@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rent Us - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="left-panel">
+        <div class="left-inner">
+          <div class="left-content">
+            <div class="logo">
+              <img src="img/logo.png" alt="Logo RentUs" class="logo-img" />
+              <h1>
+                <span class="logo-black">Rent</span
+                ><span class="logo-brown">Us</span>
+              </h1>
+            </div>
+
+            <h3><em>Bienvenido de nuevo.</em></h3>
+            <p>
+              Retoma tu búsqueda donde la dejaste y sigue construyendo tu futuro
+              hogar.
+            </p>
+          </div>
+          <img class="house-img" src="img/casa.png" alt="Casa" />
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <h2><strong>Iniciar Sesión</strong></h2>
+
+        <div class="nav-buttons">
+          <span class="slider-bg"></span>
+          <button class="nav-btn active" data-index="0" data-tab="login">
+            Iniciar Sesión
+          </button>
+          <button class="nav-btn" data-index="1" data-tab="register">
+            Registrarse
+          </button>
+          <button class="nav-btn" data-index="2" data-tab="back">Volver</button>
+        </div>
+
+        <form class="login-form">
+          <input type="email" placeholder="Correo electrónico" required />
+          <input type="password" placeholder="Contraseña" required />
+          <button onclick="location.href='homeIniciado.html'" type="submit" class="login-btn">Iniciar Sesión</button>
+        </form>
+
+        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        <p class="or">O continua con</p>
+        <div class="social-login">
+          <img
+            src="https://img.icons8.com/ios-filled/40/mac-os.png"
+            alt="Apple"
+          />
+          <img
+            src="https://img.icons8.com/ios-filled/40/facebook-new.png"
+            alt="Facebook"
+          />
+          <img
+            src="https://img.icons8.com/ios-filled/40/google-logo.png"
+            alt="Google"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="js/nav-toggle.js"></script>
+  </body>
+</html>
