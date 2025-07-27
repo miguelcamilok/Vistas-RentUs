@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajustes - RentUs</title>
+  <link rel="stylesheet" href="css/ajustes.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="js/ajustes.js" defer></script>
+</head>
+
+<body>
+
+  <main class="ajustes-container">
+    <div class="encabezado-ajustes">
+      <div class="volver-home">
+        <a href="homeIniciado.html" class="btn-volver">
+          <i class="fas fa-home"></i> Volver al Inicio
+        </a>
+      </div>
+      <h1 class="titulo-ajustes">Ajustes de Usuario</h1>
+    </div>
+    <div class="ajustes-grid">
+      <!-- Panel de navegación lateral -->
+      <nav class="ajustes-sidebar">
+        <ul>
+          <li class="active" onclick="mostrarSeccion('perfil')">Perfil</li>
+          <li onclick="mostrarSeccion('seguridad')">Seguridad</li>
+          <li onclick="mostrarSeccion('notificaciones')">Notificaciones</li>
+          <li onclick="mostrarSeccion('preferencias')">Preferencias</li>
+        </ul>
+      </nav>
+
+      <!-- Contenido dinámico -->
+      <section class="ajustes-content">
+        <div class="tema-toggle">
+          <span class="label-tema">Tema:</span>
+          <label class="switch">
+            <input type="checkbox" id="toggle-tema">
+            <span class="slider"></span>
+          </label>
+          <span id="modo-texto">Claro</span>
+        </div>
+        <div id="perfil" class="seccion-ajuste activo">
+          <h2>Información del Perfil</h2>
+          <form>
+            <label>Nombre:</label>
+            <input type="text" value="Juan Pérez" />
+            <label>Email:</label>
+            <input type="email" value="juan@email.com" />
+            <button type="submit">Guardar Cambios</button>
+          </form>
+        </div>
+
+        <div id="seguridad" class="seccion-ajuste">
+          <h2>Cambiar Contraseña</h2>
+          <form>
+            <label>Contraseña Actual:</label>
+            <input type="password" />
+            <label>Nueva Contraseña:</label>
+            <input type="password" />
+            <label>Confirmar Nueva Contraseña:</label>
+            <input type="password" />
+            <button type="submit">Actualizar</button>
+          </form>
+        </div>
+
+        <div id="notificaciones" class="seccion-ajuste">
+          <h2>Notificaciones</h2>
+          <label><input type="checkbox" checked /> Recibir por correo</label><br />
+          <label><input type="checkbox" /> Recibir por SMS</label>
+        </div>
+        <div id="preferencias" class="seccion-ajuste">
+          <h2>Preferencias del Usuario</h2>
+
+          <!-- Idioma -->
+          <div class="campo-preferencia">
+            <label for="idioma-preferido">Idioma:</label>
+            <select id="idioma-preferido" name="idioma">
+              <option value="es">Español</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+
+          <!-- Formato de Notificación -->
+          <div class="campo-preferencia">
+            <label for="notificacion-formato">Formato de notificación preferido:</label>
+            <select id="notificacion-formato">
+              <option value="email">Correo electrónico</option>
+              <option value="push">Notificaciones push</option>
+              <option value="ambos">Ambos</option>
+            </select>
+          </div>
+
+          <!-- Tamaño de Fuente -->
+          <div class="campo-preferencia">
+            <label for="fuente">Tamaño de fuente:</label>
+            <select id="fuente">
+              <option value="normal">Normal</option>
+              <option value="grande">Grande</option>
+              <option value="extra">Extra grande</option>
+            </select>
+          </div>
+
+      </section>
+    </div>
+  </main>
+
+</body>
+
+</html>
