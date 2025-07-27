@@ -1,249 +1,367 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RentUs - Inicio</title>
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <div class="container">
-      <section class="intro">
-        <header>
-          <div class="logo">
-            <img src="img/logo.png" alt="Logo" />
-            <div class="logo-text"><strong>Rent</strong><span>Us</span></div>
-          </div>
-          <nav>
-            <a href="./homeIniciado.html">Home</a>
-            <a href="./Propiedades.html">Propiedades</a>
-            <a href="#">Sobre nosotros</a>
 
-          </nav>
-          <div class="user-box" onclick="toggleDropdown()">
-            <img src="img/perfil.jpg" alt="Usuario" class="user-img" />
-            <div class="user-info">
-              <span class="user-name">Miguel</span>
-              <span class="user-role">Admin</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RentUs - Inicio</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <section class="intro">
+      <header>
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" />
+          <div class="logo-text"><strong>Rent</strong><span>Us</span></div>
+        </div>
+        <nav>
+          <a href="./homeIniciado.html">Home</a>
+          <a href="./Propiedades.html">Propiedades</a>
+          <a href="#">Sobre nosotros</a>
+
+        </nav>
+        <div class="user-box" id="userToggle">
+          <img src="img/perfil.jpg" alt="Usuario" class="user-img" />
+          <div class="user-info">
+            <span class="user-name">Miguel</span>
+            <span class="user-role">Admin</span>
+          </div>
+          <span class="user-arrow">▾</span>
+
+          <!-- Menú desplegable -->
+          <div class="user-dropdown" id="userDropdown">
+            <div onclick="openProfileModal()">
+              <img src="https://img.icons8.com/ios-filled/20/user.png" alt="Perfil" />
+              Perfil
             </div>
-            <span class="user-arrow">▾</span>
-
-            <div class="user-dropdown" id="userDropdown">
-              <div onclick="location.href='perfil.html'">
-                <img src="https://img.icons8.com/ios-filled/20/user.png" />
-                Perfil
-              </div>
-              <div onclick="location.href='contratos.html'">
-                <img src="https://img.icons8.com/ios-filled/20/agreement.png" />
-                Contratos
-              </div>
-              <div onclick="location.href='pagos.html'">
-                <img
-                  src="https://img.icons8.com/ios-filled/20/bank-cards.png"
-                />
-                Pagos
-              </div>
-              <div onclick="location.href='solicitudes.html'">
-                <img
-                  src="https://img.icons8.com/ios-filled/20/document--v1.png"
-                />
-                Solicitudes
-              </div>
+            <!-- Botón para abrir el modal de mantenimiento: -->
+            <div onclick="openMaintenanceModal()" class="menu-item">
+              <img src="https://img.icons8.com/ios-filled/20/maintenance.png" alt="Mantenimiento" />
+              Mantenimiento
             </div>
-          </div>
-        </header>
-
-        <section class="hero">
-          <div class="hero-text">
-            <h1>El hogar ideal existe, y te ayudamos a encontrarlo</h1>
-            <p>
-              Te acompañamos en cada paso para que encuentres una casa que
-              encaje con tu vida y tus planes.
-            </p>
-          </div>
-          <div class="hero-img">
-            <img src="img/casa.png" alt="Casa principal" />
-          </div>
-        </section>
-      </section>
-
-      <section class="search-section">
-        <div class="search-wrapper">
-          <p class="search-title">Buscador de propiedades disponibles</p>
-          <div class="search-bar">
-            <div class="search-input">
-              <input type="text" placeholder="Ubicación" />
-              <img
-                src="https://img.icons8.com/ios-filled/20/marker.png"
-                alt="Ubicación"
-              />
+            <div onclick="location.href='contratos.html'">
+              <img src="https://img.icons8.com/ios-filled/20/agreement.png" alt="Contratos" />
+              Contratos
+            </div>
+            <div onclick="location.href='pagos.html'">
+              <img src="https://img.icons8.com/ios-filled/20/bank-cards.png" alt="Pagos" />
+              Pagos
+            </div>
+            <!-- Botón para abrir el modal de solicitudes: -->
+            <div onclick="openSolicitudesModal()">
+              <img src="https://img.icons8.com/ios-filled/20/document--v1.png" alt="Solicitudes" />
+              Solicitudes
+            </div>
+            <!-- Botón para abrir el modal de notificaciones: -->
+            <div id="openModalBtn" style="cursor: pointer; position: relative;">
+              <img src="https://img.icons8.com/ios-filled/20/appointment-reminders--v1.png" alt="Notificaciones" />
+              Notificaciones
+              <span class="notif-badge">3</span>
             </div>
 
-            <div class="search-input">
-              <select>
-                <option>Tipo de propiedad</option>
-                <option>Casa</option>
-                <option>Apartamento</option>
-              </select>
-            </div>
 
-            <div class="search-input">
-              <input type="text" placeholder="Precio" />
-              <img
-                src="https://img.icons8.com/ios-filled/20/money.png"
-                alt="Precio"
-              />
+            <div onclick="location.href='ajustes.html'">
+              <img src="https://img.icons8.com/ios-filled/20/settings.png" alt="Ajustes" />
+              Ajustes
             </div>
-
-            <button class="search-btn">Buscar</button>
           </div>
+        </div>
+
+
+      </header>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1>El hogar ideal existe, y te ayudamos a encontrarlo</h1>
+          <p>
+            Te acompañamos en cada paso para que encuentres una casa que
+            encaje con tu vida y tus planes.
+          </p>
+        </div>
+        <div class="hero-img">
+          <img src="img/casa.png" alt="Casa principal" />
         </div>
       </section>
+    </section>
 
-      <section class="populares">
-        <div class="populares-header">
-          <h2>Casas Populares</h2>
-          <span>Mostrar Más</span>
+    <section class="search-section">
+      <div class="search-wrapper">
+        <p class="search-title">Buscador de propiedades disponibles</p>
+        <div class="search-bar">
+          <div class="search-input">
+            <input type="text" placeholder="Ubicación" />
+            <img src="https://img.icons8.com/ios-filled/20/marker.png" alt="Ubicación" />
+          </div>
+
+          <div class="search-input">
+            <select>
+              <option>Tipo de propiedad</option>
+              <option>Casa</option>
+              <option>Apartamento</option>
+            </select>
+          </div>
+
+          <div class="search-input">
+            <input type="text" placeholder="Precio" />
+            <img src="https://img.icons8.com/ios-filled/20/money.png" alt="Precio" />
+          </div>
+
+          <button class="search-btn">Buscar</button>
         </div>
+      </div>
+    </section>
 
-        <div class="cards">
-          <div class="card">
-            <img src="img/casa1.webp" alt="Casa 1" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
-            </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
-          </div>
+    <section class="populares">
+      <div class="populares-header">
+        <h2>Casas Populares</h2>
+        <span>Mostrar Más</span>
+      </div>
 
-          <div class="card">
-            <img src="img/casa2.jpg" alt="Casa 2" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
-            </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
+      <div class="cards">
+        <div class="card">
+          <img src="img/casa1.webp" alt="Casa 1" />
+          <div class="card-content">
+            <h4>Casa Familiar</h4>
+            <div class="precio">$1'000.000</div>
           </div>
-
-          <div class="card">
-            <img src="img/casa3.webp" alt="Casa 3" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
-            </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="img/casa4.jpg" alt="Casa 4" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
-            </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="img/casa5.jpg" alt="Casa 5" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
-            </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="footer-top">
-          <div class="footer-col">
-            <h4>Sobre Nosotros</h4>
-            <p>
-              Somos una plataforma dedicada a ayudarle a encontrar la casa ideal
-              según tu estilo de vida.
-            </p>
-          </div>
-
-          <div class="footer-col">
-            <h4>Enlaces Rápidos</h4>
-            <ul>
-              <li><a href="#">Quiénes Somos</a></li>
-              <li><a href="#">Propiedades</a></li>
-              <li><a href="#">Contacto</a></li>
-              <li><a href="#">Preguntas Frecuentes</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Contacto</h4>
-            <ul>
-              <li>
-                <img
-                  src="https://img.icons8.com/ios-glyphs/20/ffffff/new-post.png"
-                />
-                <a href="#">soporte@RentUs.com</a>
-              </li>
-              <li>
-                <img
-                  src="https://img.icons8.com/ios-filled/20/ffffff/phone.png"
-                />
-                +57 3218598902
-              </li>
-              <li>
-                <img
-                  src="https://img.icons8.com/ios-filled/20/ffffff/marker.png"
-                />
-                Calle RentUs 123, Popayán
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Síguenos</h4>
-            <div class="social-icons">
-              <a href="#"
-                ><img
-                  src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png"
-                  alt="Facebook"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png"
-                  alt="Instagram"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://img.icons8.com/ios-filled/24/ffffff/twitterx--v2.png"
-                  alt="X"
-              /></a>
-            </div>
+          <div class="card-footer">
+            <div>⭐ ⭐</div>
+            <button>Ver Detalles</button>
           </div>
         </div>
 
-        <hr />
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 RentUs. Todos los derechos reservados</p>
-          <div>
-            <a href="#">Aviso Legal</a> |
-            <a href="#">Política de Privacidad</a>
+        <div class="card">
+          <img src="img/casa2.jpg" alt="Casa 2" />
+          <div class="card-content">
+            <h4>Casa Familiar</h4>
+            <div class="precio">$1'000.000</div>
+          </div>
+          <div class="card-footer">
+            <div>⭐ ⭐</div>
+            <button>Ver Detalles</button>
           </div>
         </div>
-      </footer>
+
+        <div class="card">
+          <img src="img/casa3.webp" alt="Casa 3" />
+          <div class="card-content">
+            <h4>Casa Familiar</h4>
+            <div class="precio">$1'000.000</div>
+          </div>
+          <div class="card-footer">
+            <div>⭐ ⭐</div>
+            <button>Ver Detalles</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="img/casa4.jpg" alt="Casa 4" />
+          <div class="card-content">
+            <h4>Casa Familiar</h4>
+            <div class="precio">$1'000.000</div>
+          </div>
+          <div class="card-footer">
+            <div>⭐ ⭐</div>
+            <button>Ver Detalles</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/casa5.jpg" alt="Casa 5" />
+          <div class="card-content">
+            <h4>Casa Familiar</h4>
+            <div class="precio">$1'000.000</div>
+          </div>
+          <div class="card-footer">
+            <div>⭐ ⭐</div>
+            <button>Ver Detalles</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="js/nav-toggle.js"></script>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h4>Sobre Nosotros</h4>
+          <p>
+            Somos una plataforma dedicada a ayudarle a encontrar la casa ideal
+            según tu estilo de vida.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#">Quiénes Somos</a></li>
+            <li><a href="#">Propiedades</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>
+              <img src="https://img.icons8.com/ios-glyphs/20/ffffff/new-post.png" />
+              <a href="#">soporte@RentUs.com</a>
+            </li>
+            <li>
+              <img src="https://img.icons8.com/ios-filled/20/ffffff/phone.png" />
+              +57 3218598902
+            </li>
+            <li>
+              <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" />
+              Calle RentUs 123, Popayán
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="social-icons">
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" /></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" /></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx--v2.png" alt="X" /></a>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 RentUs. Todos los derechos reservados</p>
+        <div>
+          <a href="#">Aviso Legal</a> |
+          <a href="#">Política de Privacidad</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div id="profileModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeProfileModal()">&times;</span>
+      <h2>Perfil del Usuario</h2>
+      <hr />
+      <div class="profile-details">
+        <img src="img/perfil.jpg" alt="Perfil" class="modal-user-img" />
+        <p><strong>Nombre:</strong> Miguel</p>
+        <p><strong>Rol:</strong> Administrador</p>
+        <p><strong>Email:</strong> miguel@example.com</p>
+        <p><strong>Teléfono:</strong> +57 320 000 0000</p>
+        <!-- Puedes agregar más info aquí -->
+      </div>
     </div>
-  </body>
+  </div>
+
+  <!-- Modal de Notificaciones -->
+  <div id="notifModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModalBtn">&times;</span>
+      <h2 class="section-title">Notificaciones</h2>
+
+      <div class="timeline">
+        <div class="date-label">Hoy</div>
+
+        <div class="notification-card">
+          <div class="notif-icon bg-primary"><i class="fas fa-comment-alt"></i></div>
+          <div class="notif-content">
+            <p><strong>Miguel Ruiz</strong> comentó en <a href="#">una propiedad</a></p>
+            <span class="notif-text">“¿Sigue disponible esta propiedad?”</span>
+            <span class="notif-time">14:22</span>
+          </div>
+        </div>
+
+        <div class="notification-card">
+          <div class="notif-icon bg-success"><i class="fas fa-heart"></i></div>
+          <div class="notif-content">
+            <p><strong>Ana Torres</strong> marcó como favorita <a href="#">tu anuncio</a></p>
+            <span class="notif-time">13:55</span>
+          </div>
+        </div>
+
+        <div class="notification-card">
+          <div class="notif-icon bg-warning"><i class="fas fa-wrench"></i></div>
+          <div class="notif-content">
+            <p><strong>Sistema</strong> notificó una <a href="#">actualización de mantenimiento</a></p>
+            <span class="notif-time">09:12</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Mantenimiento: -->
+  <div id="maintenanceModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeMaintenanceModal()">&times;</span>
+      <h2>Solicitud de Mantenimiento</h2>
+      <form id="maintenanceForm">
+        <label for="category">Categoría:</label>
+        <select id="category" name="category" required>
+          <option value="">Seleccione una opción</option>
+          <option value="electricidad">Electricidad</option>
+          <option value="plomeria">Plomería</option>
+          <option value="estructural">Estructural</option>
+          <option value="otros">Otros</option>
+        </select>
+
+        <label for="description">Descripción del problema:</label>
+        <textarea id="description" name="description" rows="4" required
+          placeholder="Describe el daño o arreglo necesario..."></textarea>
+
+        <div class="form-group">
+          <label for="imagen">Adjuntar imagen (opcional)</label>
+          <input type="file" id="imagen" name="imagen" accept="image/*" />
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar Solicitud</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Solicitudes -->
+  <div id="solicitudesModal" class="modal">
+    <div class="modal-content solicitudes-modal">
+      <span class="close" onclick="closeSolicitudesModal()">&times;</span>
+      <h2>Solicitudes de Arriendo</h2>
+
+      <div class="solicitud-card">
+        <div class="solicitud-info">
+          <p><strong>Juan Pérez</strong> está interesado en el apartamento en Medellín.</p>
+          <p><small>Fecha de solicitud: 2025-07-25</small></p>
+        </div>
+        <div class="solicitud-actions">
+          <button class="btn-aceptar">Aceptar</button>
+          <button class="btn-rechazar">Rechazar</button>
+        </div>
+      </div>
+
+      <div class="solicitud-card">
+        <div class="solicitud-info">
+          <p><strong>Camila Torres</strong> desea agendar una visita a la casa en Envigado.</p>
+          <p><small>Fecha de solicitud: 2025-07-24</small></p>
+        </div>
+        <div class="solicitud-actions">
+          <button class="btn-aceptar">Aceptar</button>
+          <button class="btn-rechazar">Rechazar</button>
+        </div>
+      </div>
+
+      <!-- Puedes agregar más tarjetas dinámicamente con JS -->
+    </div>
+  </div>
+
+
+  <script src="js/notificaciones-modal.js"></script>
+
+
+</body>
+
 </html>
