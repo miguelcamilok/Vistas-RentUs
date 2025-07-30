@@ -446,18 +446,24 @@ nav a {
 .user-dropdown {
   display: none;
   flex-direction: column;
-  background: #653e2ff4;
+  background: rgba(101, 62, 47, 0.1); /* Fondo translúcido tipo glassmorphism */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   position: absolute;
-  top: 110%;
+  top: 120%; /* Más separación del botón */
   right: 0;
   z-index: 99;
   padding: 0.6rem 0.8rem;
-  width: max-content;
-  min-width: 180px;
+  width: auto;
+  min-width: 230px; /* Más ancho */
   gap: 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: black; /* Texto negro */
 }
+
+
 
 .user-dropdown div {
   display: flex;
@@ -465,16 +471,17 @@ nav a {
   gap: 0.6rem;
   font-weight: 600;
   font-size: 0.9rem;
-  color: #f1f1f1;
+  color: #000000;
   cursor: pointer;
   padding: 6px;
   border-radius: 8px;
   transition: background 0.2s ease;
 }
 
+
 /*color sombra*/
 .user-dropdown div:hover {
-  background: #4D2F24;
+
   text-decoration: underline;
 }
 
