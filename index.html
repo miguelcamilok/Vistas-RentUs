@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RentUs - Inicio</title>
-    <link rel="stylesheet" href="css/index.css" />
-  </head>
-  <body>
-    <div class="container">
-      <section class="intro">
-        <header>
-          <div class="logo">
-            <img src="img/logo.png" alt="Logo" />
-            <div class="logo-text"><strong>Rent</strong><span>Us</span></div>
-          </div>
 
-          <nav>
-            <a href="./homeIniciado.html">Home</a>
-            <a href="./Propiedades.html">Propiedades</a>
-            <a href="#">Sobre nosotros</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RentUs - Home</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/propiedades.css" />
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="img/logo.png" type="image/png" media="(prefers-color-scheme: dark)">
+  <!-- Favicon para modo oscuro -->
+  <link rel="icon" href="img/logodark.png" type="image/png" media="(prefers-color-scheme: light)">
+</head>
 
-          </nav>
-          <button onclick="location.href='login.html'" class="login-btn">Iniciar Sesión</button>
-        </header>
+<body>
+  <div class="container">
+    <section class="property-hero">
+      <header class="property-header">
+        <div class="logo">
+          <img onclick="location.href='index.html'" src="img/logo.png" alt="Logo" />
+          <div onclick="location.href='index.html'" class="logo-text"><strong>Rent</strong><span>Us</span></div>
+        </div>
 
+        <nav class="property-nav">
+          <a href="./index.html" class="nav-link active">Home</a>
+          <a href="./Propiedades.html" class="nav-link">Propiedades</a>
+          <a href="#" class="nav-link">Sobre nosotros</a>
+        </nav>
+        <button onclick="location.href='login.html'" class="login-btn">Iniciar Sesión</button>
+      </header>
+
+
+
+      <div class="property-hero-content">
         <section class="hero">
           <div class="hero-text">
             <h1>El hogar ideal existe, y te ayudamos a encontrarlo</h1>
@@ -32,189 +42,470 @@
               encaje con tu vida y tus planes.
             </p>
           </div>
-          <div class="hero-img">
-            <img src="img/casa.png" alt="Casa principal" />
-          </div>
         </section>
-      </section>
 
-      <section class="search-section">
-        <div class="search-wrapper">
-          <p class="search-title">Buscador de propiedades disponibles</p>
-          <div class="search-bar">
-            <div class="search-input">
-              <input type="text" placeholder="Ubicación" />
-              <img
-                src="https://img.icons8.com/ios-filled/20/marker.png"
-                alt="Ubicación"
-              />
-            </div>
-
-            <div class="search-input">
-              <select>
-                <option>Tipo de propiedad</option>
-                <option>Casa</option>
-                <option>Apartamento</option>
-              </select>
-            </div>
-
-            <div class="search-input">
-              <input type="text" placeholder="Precio" />
-              <img
-                src="https://img.icons8.com/ios-filled/20/money.png"
-                alt="Precio"
-              />
-            </div>
-
-            <button class="search-btn">Buscar</button>
+        <div class="property-hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">1,250</span>
+            <span class="stat-label">Propiedades</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">98</span>
+            <span class="stat-label">Clientes satisfechos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">15</span>
+            <span class="stat-label">Años de experiencia</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section class="populares">
-        <div class="populares-header">
-          <h2>Casas Populares</h2>
-          <span>Mostrar Más</span>
+      <div class="hero-gradient-overlay"></div>
+    </section>
+
+    <section class="search-section">
+      <div class="search-wrapper">
+        <p class="search-title">Buscador de propiedades disponibles</p>
+        <div class="search-bar">
+          <div class="search-input">
+            <input type="text" placeholder="Ubicación" />
+            <img src="https://img.icons8.com/ios-filled/20/marker.png" alt="Ubicación" />
+          </div>
+
+          <div class="search-input">
+            <select>
+              <option>Tipo de propiedad</option>
+              <option>Casa</option>
+              <option>Apartamento</option>
+            </select>
+          </div>
+
+          <div class="search-input">
+            <input type="text" placeholder="Precio" />
+            <img src="https://img.icons8.com/ios-filled/20/money.png" alt="Precio" />
+          </div>
+
+          <button class="search-btn">Buscar</button>
         </div>
+      </div>
+    </section>
 
-        <div class="cards">
-          <div class="card">
-            <img src="img/casa1.webp" alt="Casa 1" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
+    <section class="property-list">
+      <div class="property-grid">
+        <!-- Propiedad 1 - Destacada -->
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa1.webp" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
             </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
           </div>
-
-          <div class="card">
-            <img src="img/casa2.jpg" alt="Casa 2" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
             </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
             </div>
-          </div>
-
-          <div class="card">
-            <img src="img/casa3.webp" alt="Casa 3" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
             </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
             </div>
-          </div>
-
-          <div class="card">
-            <img src="img/casa4.jpg" alt="Casa 4" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
-            </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="img/casa5.jpg" alt="Casa 5" />
-            <div class="card-content">
-              <h4>Casa Familiar</h4>
-              <div class="precio">$1'000.000</div>
-            </div>
-            <div class="card-footer">
-              <div>⭐ ⭐</div>
-              <button>Ver Detalles</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="footer-top">
-          <div class="footer-col">
-            <h4>Sobre Nosotros</h4>
-            <p>
-              Somos una plataforma dedicada a ayudarle a encontrar la casa ideal
-              según tu estilo de vida.
-            </p>
-          </div>
-
-          <div class="footer-col">
-            <h4>Enlaces Rápidos</h4>
-            <ul>
-              <li><a href="#">Quiénes Somos</a></li>
-              <li><a href="#">Propiedades</a></li>
-              <li><a href="#">Contacto</a></li>
-              <li><a href="#">Preguntas Frecuentes</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Contacto</h4>
-            <ul>
-              <li>
-                <img
-                  src="https://img.icons8.com/ios-glyphs/20/ffffff/new-post.png"
-                />
-                <a href="#">soporte@RentUs.com</a>
-              </li>
-              <li>
-                <img
-                  src="https://img.icons8.com/ios-filled/20/ffffff/phone.png"
-                />
-                +57 3218598902
-              </li>
-              <li>
-                <img
-                  src="https://img.icons8.com/ios-filled/20/ffffff/marker.png"
-                />
-                Calle RentUs 123, Popayán
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Síguenos</h4>
-            <div class="social-icons">
-              <a href="#"
-                ><img
-                  src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png"
-                  alt="Facebook"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png"
-                  alt="Instagram"
-              /></a>
-              <a href="#"
-                ><img
-                  src="https://img.icons8.com/ios-filled/24/ffffff/twitterx--v2.png"
-                  alt="X"
-              /></a>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
 
-        <hr />
+        <div id="property-detail-modal" class="property-detail-modal">
+          <button id="prev-btn" class="carousel-prev">&#10094;</button>
+          <button id="next-btn" class="carousel-next">&#10095;</button>
 
-        <div class="footer-bottom">
-          <p>&copy; 2025 RentUs. Todos los derechos reservados</p>
-          <div>
-            <a href="#">Aviso Legal</a> |
-            <a href="#">Política de Privacidad</a>
+
+          <div class="property-detail-content">
+            <span class="property-detail-close-btn">&times;</span>
+
+            <div class="property-detail-left">
+              <div class="image-container">
+                <img id="property-detail-image" src="" alt="Imagen de la propiedad" />
+              </div>
+              <div class="image-thumbnails" id="property-thumbnails">
+                <!-- Miniaturas dinámicas -->
+              </div>
+            </div>
+
+            <div class="property-detail-right">
+              <h2 id="property-detail-title"></h2>
+              <ul class="property-detail-features">
+                <li id="property-detail-desc"></li>
+                <li id="property-detail-beds"></li>
+                <li id="property-detail-baths"></li>
+                <li id="property-detail-size"></li>
+              </ul>
+              <p class="property-detail-location" id="property-detail-location"></p>
+              <p class="property-detail-price" id="property-detail-price"></p>
+              <button class="property-detail-rent-btn">Solicitar alquiler</button>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
-  </body>
+
+        <!-- Propiedad 2 -->
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa1.webp" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
+          </div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
+            </div>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
+            </div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+            </div>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
+            </div>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa2.jpg" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
+          </div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
+            </div>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
+            </div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+            </div>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
+            </div>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa3.webp" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
+          </div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
+            </div>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
+            </div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+            </div>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
+            </div>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa4.jpg" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
+          </div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
+            </div>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
+            </div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+            </div>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
+            </div>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa5.jpg" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
+          </div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
+            </div>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
+            </div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+            </div>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
+            </div>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa5.jpg" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
+          </div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
+            </div>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
+            </div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+            </div>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
+            </div>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card featured">
+          <div class="property-badge">⭐ Destacada</div>
+          <div class="property-media">
+            <img src="img/casa5.jpg" alt="Casa moderna">
+            <div class="property-actions">
+              <button class="fav-btn"><i class="fas fa-heart"></i></button>
+              <button class="compare-btn"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+            <button class="tour-btn"><i class="fas fa-vr-cardboard"></i> Tour 360°</button>
+          </div>
+          <div class="property-details">
+            <div class="price-agent">
+              <span class="property-price">$1'200.000</span>
+              <div class="agent-mini">
+                <img src="img/perfil.jpg" alt="Agente">
+              </div>
+            </div>
+            <h3 class="property-title">Casa moderna en zona residencial</h3>
+            <div class="property-location">
+              <i class="fas fa-map-marker-alt"></i> Barrio El Poblado, Popayán
+            </div>
+            <div class="property-features">
+              <span><i class="fas fa-bed"></i> 3</span>
+              <span><i class="fas fa-bath"></i> 2</span>
+              <span><i class="fas fa-ruler-combined"></i> 180m²</span>
+            </div>
+            <div class="property-description">
+              Amplia casa con jardín, cocina integral y acabados de lujo. Ideal para familias.
+            </div>
+            <div class="property-footer">
+              <div class="property-rating">
+                <i class="fas fa-star"></i> 4.5
+              </div>
+              <button class="details-btn">Ver detalles <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="showall">
+        <a href="Propiedades.html" class="showall-btn">Mostrar Más</a>
+      </div>
+    </section>
+
+    <!-- <section class="property-cta">
+      <div class="cta-content">
+        <h2>¿No encontraste lo que buscabas?</h2>
+        <p>Déjanos ayudarte a encontrar la propiedad perfecta para ti.</p>
+        <button class="cta-btn">Contactar un asesor</button>
+      </div>
+    </section> -->
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-col">
+          <h4>Sobre Nosotros</h4>
+          <p>
+            Somos una plataforma dedicada a ayudarle a encontrar la casa ideal
+            según tu estilo de vida.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#">Quiénes Somos</a></li>
+            <li><a href="#">Propiedades</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li>
+              <img src="https://img.icons8.com/ios-glyphs/20/ffffff/new-post.png" />
+              <a href="#">soporte@RentUs.com</a>
+            </li>
+            <li>
+              <img src="https://img.icons8.com/ios-filled/20/ffffff/phone.png" />
+              +57 3218598902
+            </li>
+            <li>
+              <img src="https://img.icons8.com/ios-filled/20/ffffff/marker.png" />
+              Calle RentUs 123, Popayán
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="social-icons">
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" /></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" /></a>
+            <a href="#"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitterx--v2.png" alt="X" /></a>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 RentUs. Todos los derechos reservados</p>
+        <div>
+          <a href="#">Aviso Legal</a> |
+          <a href="#">Política de Privacidad</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/properties.js"></script>
+  <script src="js/search.js"></script>
+</body>
+
 </html>
