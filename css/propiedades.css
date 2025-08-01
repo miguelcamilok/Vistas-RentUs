@@ -316,6 +316,7 @@ body {
   gap: 2rem;
   padding: 0 7%;
   margin-bottom: 3rem;
+  position: relative;
 }
 
 .property-card {
@@ -348,6 +349,16 @@ body {
   font-weight: 600;
   z-index: 2;
   font-size: 0.9rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.property-card:hover .property-badge {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .property-media {
