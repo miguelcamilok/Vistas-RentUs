@@ -1,0 +1,168 @@
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.pinimg.com/1200x/84/b7/4a/84b74a810488c6c6362fef1da8802f31.jpg') center center / cover no-repeat;
+  filter: blur(8px) brightness(0.6);
+  z-index: -1;
+}
+body {
+  margin: 0;
+  font-family: 'Se', sans-serif;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.carousel-container {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #eee;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  perspective: 1200px;
+}
+
+.card {
+  background: #1c1c1c;
+  border-radius: 20px;
+  padding: 20px;
+  width: 220px;
+  transform: scale(0.8);
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: 0.5;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+}
+
+.card.active {
+  transform: scale(1.1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.status.activo {
+  color: #4caf50;
+}
+
+.status.inactivo {
+  color: #f44336;
+}
+
+.vista-previa {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #ff5c5c;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.vista-previa:hover {
+  background-color: #e14b4b;
+}
+
+.carousel-controls {
+  margin-top: 20px;
+}
+
+.carousel-controls button {
+  background: #333;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background 0.3s;
+}
+
+.carousel-controls button:hover {
+  background: #555;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #222;
+  margin: 5% auto;
+  padding: 20px;
+  max-width: 700px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.download-btn {
+  padding: 10px 20px;
+  background: #5c3d2e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}

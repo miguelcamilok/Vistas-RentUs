@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rent Us - Pagos</title>
+  <link rel="stylesheet" href="css/pagos.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="pagos-container glass">
+    <input type="text" class="busqueda" placeholder="🔍 Busca tu recibo/pago">
+
+    <table class="historial">
+      <thead>
+        <tr>
+          <th></th><th>#Factura</th><th>Cliente</th><th>Fecha</th><th>Estado</th><th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>12768</td><td>Jose Manzano C</td><td>10-05-2025</td>
+          <td><span class="estado pendiente">pendiente</span></td>
+          <td>$2'000.000</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox"></td>
+          <td>00039</td><td>Jose Manzano C</td><td>10-04-2025</td>
+          <td><span class="estado realizado">realizado</span></td>
+          <td>$2'000.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="botones">
+      <button id="btn-detalles">Ver detalles</button>
+      <button id="btn-pagar">Realizar pago</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content glass">
+      <span class="close" id="close-modal">&times;</span>
+
+      <div id="paso1" class="modal-step">
+        <img src="./img/logo.png" alt="Rent Us" class="logo">
+        <h2>Rent <span class="bold">Us</span></h2>
+        <p>Agrega una forma de pago ahora para que tu próximo pago sea más rápido y sencillo.</p>
+        <button id="ir-metodos">Agrega un método de pago</button>
+      </div>
+
+      <div id="paso2" class="modal-step hidden">
+        <h3>Elige tu método de pago favorito:</h3>
+        <div class="metodos">
+          <button class="metodo"><img src="./img/tarjeta-de-credito.png"> Tarjetas</button>
+          <button class="metodo"><img src="img/bancolombia.png"> Bancolombia</button>
+          <button class="metodo"><img src="img/nequi.png"> Nequi</button>
+          <button class="metodo"><img src="img/pse.png"> PSE</button>
+          <button class="metodo"><img src="img/daviplata.png"> Daviplata</button>
+          <button class="metodo">💵 Pago físico</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/pagos.js"></script>
+</body>
+</html>

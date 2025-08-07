@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contratos</title>
+  <link rel="stylesheet" href="./css/contratos.css" />
+</head>
+<body>
+  <div class="carousel-container">
+    <h2 class="titulo">Mis Contratos</h2>
+    <div class="carousel">
+      <div class="card active" data-img="./img/contrato1.jpg">
+        <img src="./img/casa5.jpg" alt="Contrato 1">
+        <h4>Contrato N° 0003</h4>
+        <p>Estado: <span class="status activo">Activo ●</span></p>
+        <button class="vista-previa">Vista previa</button>
+      </div>
+
+      <div class="card" data-img="./img/contrato2.jpg">
+        <img src="./img/casa2.jpg" alt="Contrato 2">
+        <h4>Contrato N° 0002</h4>
+        <p>Estado: <span class="status inactivo">Inactivo ●</span></p>
+        <button class="vista-previa">Vista previa</button>
+      </div>
+
+      <div class="card" data-img="./img/contrato3.jpg">
+        <img src="./img/casa4.jpg" alt="Contrato 3">
+        <h4>Contrato N° 0001</h4>
+        <p>Estado: <span class="status inactivo">Inactivo ●</span></p>
+        <button class="vista-previa">Vista previa</button>
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button id="prevBtn">⟨</button>
+      <button id="nextBtn">⟩</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <img id="modal-img" src="" alt="Vista previa del contrato" />
+      <button class="download-btn">Descargar</button>
+    </div>
+  </div>
+
+  <script src="./js/contratos.js"></script>
+</body>
+</html>

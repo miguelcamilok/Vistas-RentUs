@@ -1,0 +1,203 @@
+/* Fondo borroso */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.pinimg.com/736x/2f/a4/af/2fa4afea9af72728ea85641bfd66cdf3.jpg') center center / cover no-repeat;
+  filter: blur(6px) brightness(0.6);
+  z-index: -1;
+}
+
+/* Reset + Centrado */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor principal más grande */
+main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;   /* <-- más ancho */
+  padding: 60px;       /* <-- más espacio interno */
+  box-sizing: border-box;
+}
+
+/* Tarjeta glass más imponente */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px;         /* más padding */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  color: #fff;
+  font-size: 1.2rem;     /* texto más grande */
+  transform: scale(1.2); /* escalar todo el contenido */
+  transition: transform 0.3s ease;
+}
+
+/* Contenedor de pagos ajustado */
+.pagos-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Buscador */
+.busqueda {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tabla */
+.historial {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.historial th, .historial td {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #eee;
+}
+
+.estado.pendiente {
+  background: orange;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #000;
+}
+
+.estado.realizado {
+  background: limegreen;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #000;
+}
+
+/* Botones */
+.botones {
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.botones button {
+  padding: 10px 20px;
+  background: #4d2c21;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.botones button:hover {
+  background: #321d16;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 400px;
+  padding: 30px 20px;
+  position: relative;
+  color: #fff;
+}
+
+.modal .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-step {
+  text-align: center;
+}
+
+.modal-step.hidden {
+  display: none;
+}
+
+.logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.bold {
+  font-weight: bold;
+  color: #5c3d2e;
+}
+
+#ir-metodos {
+  margin-top: 20px;
+  background: #5c3d2e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Métodos */
+.metodos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.metodo {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 130px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.metodo img {
+  width: 20px;
+}
