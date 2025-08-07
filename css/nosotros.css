@@ -1,0 +1,151 @@
+/* Barra superior tipo encabezado */
+.barra-encabezado {
+  background: rgba(255, 243, 239, 0.08);
+  backdrop-filter: blur(5px);
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #ffffff;
+}
+
+.barra-encabezado h1 {
+  color: #5d4037;
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+.subti{
+    font-size: 20px;
+    color: #4e342e;
+    margin-top: 10px;
+}
+/* Sección tipo banner reutilizable */
+.seccion-banner {
+  background-color: #fcf2e8;
+  padding: 60px 20px;
+  margin: 60px 0;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.seccion-banner h2 {
+  color: #5d4037;
+  margin-bottom: 20px;
+}
+
+.seccion-banner p {
+  color: #4e342e;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.historia {
+  background-color: #f5ede5;
+}
+
+/* Doble cards centradas */
+.seccion-doble-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 60px 20px;
+}
+
+.seccion-doble-cards .card {
+  width: 100%;
+  max-width: 450px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(93, 64, 55, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.seccion-doble-cards .card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px 25px;
+}
+
+.subtitulo {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #6d4c41;
+}
+
+.parrafo {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4e342e;
+}
+
+/* Lista en segunda card */
+.card-lista ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card-lista li {
+  margin-bottom: 10px;
+  color: #4e342e;
+  font-size: 1rem;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.card-lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  color: #a1887f;
+}
+
+/* Testimonios */
+.seccion-testimonios {
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  margin-bottom: 60px;
+}
+
+.testimonios-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.testimonio {
+  background-color: #fff;
+  border-left: 5px solid #a1887f;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 350px;
+  box-shadow: 0 4px 10px rgba(93, 64, 55, 0.1);
+}
+
+.comentario {
+  font-style: italic;
+  color: #4e342e;
+}
+
+.autor {
+  display: block;
+  margin-top: 10px;
+  color: #6d4c41;
+  font-weight: bold;
+}
+
+
