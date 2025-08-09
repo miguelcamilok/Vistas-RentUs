@@ -7,6 +7,7 @@
   <title>RentUs - Home</title>
   <link rel="stylesheet" href="css/index.css" />
   <link rel="stylesheet" href="css/propiedades.css" />
+  <link rel="stylesheet" href="./css/modals.css">
   <!-- Iconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Favicon para modo claro -->
@@ -213,6 +214,46 @@
             </div>
           </div>
         </div>
+
+        <!-- Modal de Solicitud de Alquiler -->
+<div id="rental-request-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="close-request-modal">&times;</span>
+    <h2>Solicitud de Alquiler</h2>
+    <form id="rental-request-form">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+
+      <label for="phone">Teléfono</label>
+      <input type="tel" id="phone" name="phone" placeholder="Tu número de contacto" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required>
+
+      <label for="start-date">Fecha de inicio</label>
+      <input type="date" id="start-date" name="start-date" required>
+
+      <label for="duration">Duración del contrato (meses)</label>
+      <input type="number" id="duration" name="duration" min="1" required>
+
+      <label for="comments">Comentarios adicionales</label>
+      <textarea id="comments" name="comments" placeholder="Escribe aquí..." rows="3"></textarea>
+
+      <button type="submit" class="submit-btn">Enviar solicitud</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal de Confirmación -->
+<div id="confirmation-modal" class="modal">
+  <div class="modal-content confirmation">
+    <span class="close-btn" id="close-confirmation-modal">&times;</span>
+    <div class="check-icon">✅</div>
+    <h2>¡Solicitud enviada!</h2>
+    <p>Tu solicitud ha sido enviada correctamente. El arrendador se pondrá en contacto contigo pronto.</p>
+    <button class="submit-btn" id="back-to-properties">Volver a propiedades</button>
+  </div>
+</div>
 
         <!-- Propiedad 2 -->
         <div class="property-card featured">
@@ -671,6 +712,7 @@
   <script src="js/properties.js"></script>
   <script src="js/search.js"></script>
   <script src="js/nav-toggle.js"></script>
+  <script src="./js/modals.js"></script>
 </body>
 
 </html>
