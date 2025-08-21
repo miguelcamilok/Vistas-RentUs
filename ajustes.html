@@ -1,113 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ajustes - RentUs</title>
-  <link rel="stylesheet" href="css/ajustes.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <script src="js/ajustes.js" defer></script>
+  <link rel="stylesheet" href="/css/ajustes.css">
 </head>
-
 <body>
+  <div class="ajustes-container">
+    <header class="barra">
+  <div class="logo">
+    <a href="homeIniciado.html"> <!-- <-- Aquí defines la página home -->
+      <img src="./img/logo.png" alt="Rentus Logo">
+    </a>
+  </div>
+  <nav class="acciones-barra">
+    <a href="#" class="volver" title="Volver"><i class="fas fa-arrow-left"></i></a>
+    <span class="notificaciones" title="Notificaciones"><i class="fas fa-bell"></i></span>
+  </nav>
+</header>
 
-  <main class="ajustes-container">
-    <div class="encabezado-ajustes">
-      <div class="volver-home">
-        <a href="homeIniciado.html" class="btn-volver">
-          <i class="fas fa-home"></i> Volver al Inicio
-        </a>
-      </div>
-      <h1 class="titulo-ajustes">Ajustes de Usuario</h1>
+    <h1>Ajustes de Usuario</h1>
+    <p>Configura tu perfil, seguridad, notificaciones y preferencias.</p>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="perfil">Perfil</button>
+      <button class="tab-button" data-tab="seguridad">Seguridad</button>
+      <button class="tab-button" data-tab="notificaciones">Notificaciones</button>
+      <button class="tab-button" data-tab="preferencias">Preferencias</button>
     </div>
-    <div class="ajustes-grid">
-      <!-- Panel de navegación lateral -->
-      <nav class="ajustes-sidebar">
-        <ul>
-          <li class="active" onclick="mostrarSeccion('perfil')">Perfil</li>
-          <li onclick="mostrarSeccion('seguridad')">Seguridad</li>
-          <li onclick="mostrarSeccion('notificaciones')">Notificaciones</li>
-          <li onclick="mostrarSeccion('preferencias')">Preferencias</li>
-        </ul>
-      </nav>
 
-      <!-- Contenido dinámico -->
-      <section class="ajustes-content">
-        <div class="tema-toggle">
-          <span class="label-tema">Tema:</span>
-          <label class="switch">
-            <input type="checkbox" id="toggle-tema">
-            <span class="slider"></span>
-          </label>
-          <span id="modo-texto">Claro</span>
-        </div>
-        <div id="perfil" class="seccion-ajuste activo">
-          <h2>Información del Perfil</h2>
-          <form>
-            <label>Nombre:</label>
-            <input type="text" value="Juan Pérez" />
-            <label>Email:</label>
-            <input type="email" value="juan@email.com" />
-            <button type="submit">Guardar Cambios</button>
-          </form>
-        </div>
-
-        <div id="seguridad" class="seccion-ajuste">
-          <h2>Cambiar Contraseña</h2>
-          <form>
-            <label>Contraseña Actual:</label>
-            <input type="password" />
-            <label>Nueva Contraseña:</label>
-            <input type="password" />
-            <label>Confirmar Nueva Contraseña:</label>
-            <input type="password" />
-            <button type="submit">Actualizar</button>
-          </form>
-        </div>
-
-        <div id="notificaciones" class="seccion-ajuste">
-          <h2>Notificaciones</h2>
-          <label><input type="checkbox" checked /> Recibir por correo</label><br />
-          <label><input type="checkbox" /> Recibir por SMS</label>
-        </div>
-        <div id="preferencias" class="seccion-ajuste">
-          <h2>Preferencias del Usuario</h2>
-
-          <!-- Idioma -->
-          <div class="campo-preferencia">
-            <label for="idioma-preferido">Idioma:</label>
-            <select id="idioma-preferido" name="idioma">
-              <option value="es">Español</option>
-              <option value="en">English</option>
-            </select>
-          </div>
-
-          <!-- Formato de Notificación -->
-          <div class="campo-preferencia">
-            <label for="notificacion-formato">Formato de notificación preferido:</label>
-            <select id="notificacion-formato">
-              <option value="email">Correo electrónico</option>
-              <option value="push">Notificaciones push</option>
-              <option value="ambos">Ambos</option>
-            </select>
-          </div>
-
-          <!-- Tamaño de Fuente -->
-          <div class="campo-preferencia">
-            <label for="fuente">Tamaño de fuente:</label>
-            <select id="fuente">
-              <option value="normal">Normal</option>
-              <option value="grande">Grande</option>
-              <option value="extra">Extra grande</option>
-            </select>
-          </div>
-
-      </section>
+    <div class="tab-content active" id="perfil">
+      <h2>Perfil</h2>
+      <label>Nombre:</label>
+      <input type="text" placeholder="Tu nombre">
+      <label>Email:</label>
+      <input type="email" placeholder="correo@ejemplo.com">
+      <label>Avatar:</label>
+      <input type="file">
+      <button class="save-btn">Guardar cambios</button>
     </div>
-  </main>
 
+    <div class="tab-content" id="seguridad">
+      <h2>Seguridad</h2>
+      <label>Contraseña actual:</label>
+      <input type="password">
+      <label>Nueva contraseña:</label>
+      <input type="password">
+      <button class="save-btn">Actualizar contraseña</button>
+    </div>
+
+    <div class="tab-content" id="notificaciones">
+      <h2>Notificaciones</h2>
+      <label>
+        <input type="checkbox"> Recibir correos de novedades
+      </label>
+      <label>
+        <input type="checkbox"> Alertas de propiedades
+      </label>
+      <button class="save-btn">Guardar preferencias</button>
+    </div>
+
+    <div class="tab-content" id="preferencias">
+      <h2>Preferencias</h2>
+      <label>Tema:</label>
+      <select>
+        <option>Claro</option>
+        <option>Oscuro</option>
+        <option>Futurista</option>
+      </select>
+      <label>Idioma:</label>
+      <select>
+        <option>Español</option>
+        <option>Inglés</option>
+      </select>
+      <button class="save-btn">Guardar preferencias</button>
+    </div>
+  </div>
+
+  <script src="/js/ajustes.js"></script>
 </body>
-
 </html>

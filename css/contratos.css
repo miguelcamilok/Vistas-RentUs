@@ -1,24 +1,54 @@
+/* Fondo con blur cálido */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://i.pinimg.com/1200x/84/b7/4a/84b74a810488c6c6362fef1da8802f31.jpg') center center / cover no-repeat;
-  filter: blur(8px) brightness(0.6);
+  background: url('https://i.pinimg.com/1200x/e2/d2/b7/e2d2b7877ffb88a68d6b72e5ea0bd965.jpg') center center / cover no-repeat;
+  filter: blur(8px) brightness(0.7);
   z-index: -1;
 }
+
 body {
   margin: 0;
-  font-family: 'Se', sans-serif;
-  background-color: #111;
-  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #2e1d12; /* marrón oscuro */
+  color: #f0e5db;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
+.barra {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: rgba(86, 44, 29, 0.85); /* marrón oscuro semi */
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
 
+.logo img {
+  height: 40px;
+}
+
+.acciones-barra a, .acciones-barra span {
+  color: #f0e5db;
+  font-size: 20px;
+  margin-left: 20px;
+  transition: all 0.3s;
+}
+
+.acciones-barra a:hover, .acciones-barra span:hover {
+  transform: scale(1.1);
+  color: #da9c5f; /* dorado */
+}
 .carousel-container {
   position: relative;
   width: 90%;
@@ -27,9 +57,10 @@ body {
 }
 
 .titulo {
-  font-size: 24px;
+  font-size: 26px;
   margin-bottom: 30px;
-  color: #eee;
+  color: #f0e5db;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .carousel {
@@ -40,8 +71,10 @@ body {
   perspective: 1200px;
 }
 
+/* Tarjetas */
 .card {
-  background: #1c1c1c;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 20px;
   padding: 20px;
   width: 220px;
@@ -49,7 +82,7 @@ body {
   transition: transform 0.5s, opacity 0.5s;
   opacity: 0.5;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
   flex-shrink: 0;
 }
 
@@ -57,6 +90,7 @@ body {
   transform: scale(1.1);
   opacity: 1;
   z-index: 2;
+  border: 1px solid #da9c5f;
 }
 
 .card img {
@@ -70,50 +104,58 @@ body {
 .card h4 {
   margin: 10px 0 5px;
   font-size: 18px;
+  color: #fff;
 }
 
+/* Estados */
 .status.activo {
   color: #4caf50;
+  font-weight: bold;
 }
 
 .status.inactivo {
   color: #f44336;
+  font-weight: bold;
 }
 
+/* Botón dentro de la tarjeta */
 .vista-previa {
   margin-top: 10px;
   padding: 8px 14px;
-  background-color: #ff5c5c;
+  background-color: #da9c5f; /* dorado */
   border: none;
   border-radius: 10px;
-  color: white;
+  color: #fff;
   font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .vista-previa:hover {
-  background-color: #e14b4b;
+  background-color: #b77a46;
+  transform: scale(1.05);
 }
 
+/* Controles carrusel */
 .carousel-controls {
   margin-top: 20px;
 }
 
 .carousel-controls button {
-  background: #333;
+  background: #562c1d;
   border: none;
-  color: white;
-  font-size: 24px;
-  padding: 10px 20px;
+  color: #fff;
+  font-size: 22px;
+  padding: 12px 18px;
   border-radius: 50%;
   cursor: pointer;
   margin: 0 10px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .carousel-controls button:hover {
-  background: #555;
+  background: #da9c5f;
+  transform: scale(1.1);
 }
 
 /* Modal */
@@ -126,18 +168,19 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(46, 29, 18, 0.95); /* marrón oscuro semi */
 }
 
 .modal-content {
   position: relative;
-  background-color: #222;
+  background-color: #3b2416;
   margin: 5% auto;
   padding: 20px;
   max-width: 700px;
   border-radius: 12px;
   text-align: center;
-  color: white;
+  color: #f0e5db;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
 .modal-content img {
@@ -149,20 +192,32 @@ body {
 }
 
 .close {
-  color: white;
+  color: #fff;
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
+.close:hover {
+  color: #da9c5f;
+}
+
+/* Botón de descarga */
 .download-btn {
   padding: 10px 20px;
-  background: #5c3d2e;
+  background: #da9c5f;
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.download-btn:hover {
+  background: #b77a46;
+  transform: scale(1.05);
 }
