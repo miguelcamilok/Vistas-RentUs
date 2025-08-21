@@ -9,42 +9,45 @@
   width: 100%;
   height: 100%;
   overflow: auto; 
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5); /* más transparente */
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #fdf6f0; /* color crema suave */
   margin: auto;
   padding: 25px;
   border-radius: 15px;
   width: 90%;
   max-width: 500px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35); /* sombra más suave y realista */
   animation: fadeIn 0.3s ease;
   font-family: 'Segoe UI', Tahoma, sans-serif;
+  border: 1px solid #e0c9b0; /* borde sutil */
 }
 
+/* Botón cerrar */
 .close-btn {
   float: right;
   font-size: 26px;
   font-weight: bold;
   cursor: pointer;
-  color: #5a3825;
+  color: #8c5b3c; /* marrón medio */
+  transition: color 0.3s;
 }
 
 .close-btn:hover {
-  color: #8c5b3c;
+  color: #d2b48c; /* dorado claro al hover */
 }
 
-/* --- Encabezados --- */
+/* Encabezados */
 .modal-content h2 {
   margin-top: 0;
-  color: #5a3825;
+  color: #5a3825; /* marrón oscuro */
   font-weight: bold;
   text-align: center;
 }
 
-/* --- Inputs y labels --- */
+/* Inputs y labels */
 label {
   display: block;
   margin-top: 15px;
@@ -60,33 +63,37 @@ input, textarea {
   border-radius: 8px;
   font-size: 14px;
   font-family: inherit;
-  background-color: #fff9f4;
+  background-color: #fff9f4; /* crema claro */
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus, textarea:focus {
-  border-color: #8c5b3c;
+  border-color: #c79663; /* marrón dorado */
+  box-shadow: 0 0 8px rgba(199,150,99,0.5);
   outline: none;
 }
 
-/* --- Botones --- */
+/* Botones */
 .submit-btn {
   width: 100%;
   padding: 12px;
   margin-top: 20px;
-  background-color: #8c5b3c;
-  color: white;
+  background-color: #c79663; /* marrón dorado */
+  color: #fffdf8; /* crema claro */
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .submit-btn:hover {
-  background-color: #5a3825;
+  background-color: #a36b3f; /* marrón más oscuro */
+  transform: translateY(-2px);
 }
 
-/* --- Confirmación --- */
+/* Confirmación */
 .confirmation {
   text-align: center;
 }
@@ -94,9 +101,10 @@ input:focus, textarea:focus {
 .check-icon {
   font-size: 40px;
   margin-bottom: 15px;
+  color: #c79663; /* dorado */
 }
 
-/* --- Animación --- */
+/* Animación */
 @keyframes fadeIn {
   from {opacity: 0; transform: scale(0.9);}
   to {opacity: 1; transform: scale(1);}

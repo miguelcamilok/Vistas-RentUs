@@ -4,14 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rent Us - Pagos</title>
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="css/pagos.css" />
 </head>
 <body>
 
-
+<div class="pagos-container">  
+<header class="barra">
+  <div class="logo">
+    <a href="homeIniciado.html"> <!-- <-- Aquí defines la página home -->
+      <img src="./img/logo.png" alt="Rentus Logo">
+    </a>
+  </div>
+  <nav class="acciones-barra">
+    <a href="#" class="volver" title="Volver"><i class="fas fa-arrow-left"></i></a>
+    <span class="notificaciones" title="Notificaciones"><i class="fas fa-bell"></i></span>
+  </nav>
+</header>
   <div class="background"></div>
+  
 
   <div class="pagos-container glass">
+    
     <input type="text" class="busqueda" placeholder="🔍 Busca tu recibo/pago">
 
     <table class="historial">
@@ -67,6 +83,7 @@
       </div>
     </div>
   </div>
+</div>
 
   <script src="js/pagos.js"></script>
 </body>

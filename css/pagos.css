@@ -1,203 +1,256 @@
-  /* Fondo borroso */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://i.pinimg.com/1200x/e2/d2/b7/e2d2b7877ffb88a68d6b72e5ea0bd965.jpg') center center / cover no-repeat;
-    filter: blur(6px) brightness(0.6);
-    z-index: -1;
-  }
+/* Fondo borroso */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.pinimg.com/1200x/e2/d2/b7/e2d2b7877ffb88a68d6b72e5ea0bd965.jpg') center center / cover no-repeat;
+  filter: blur(6px) brightness(0.6);
+  z-index: -1;
+}
 
-  /* Reset + Centrado */
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+/* Reset + Centrado */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
 
-  /* Contenedor principal más grande */
-  main {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1200px;   /* <-- más ancho */
-    padding: 60px;       /* <-- más espacio interno */
-    box-sizing: border-box;
-  }
+/* Contenedor principal de pagos */
+.pagos-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
 
-  /* Tarjeta glass más imponente */
-  .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    padding: 40px;         /* más padding */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-    width: 100%;
-    color: #fff;
-    font-size: 1.2rem;     /* texto más grande */
-    transform: scale(1.2); /* escalar todo el contenido */
-    transition: transform 0.3s ease;
-  }
+/* Forzar que todo dentro se ajuste al contenedor */
+.pagos-container > * {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
 
-  /* Contenedor de pagos ajustado */
-  .pagos-container {
-    width: 100%;
-    margin: 0 auto;
-  }
+/* Barra */
+.pagos-container .barra {
+  margin: 0 0 25px 0;
+}
 
-  /* Buscador */
-  .busqueda {
-    width: 100%;
-    padding: 12px;
-    border-radius: 30px;
-    border: none;
-    font-size: 16px;
-    margin-bottom: 20px;
-    outline: none;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
+/* Tabs */
+.pagos-container .tabs {
+  margin-bottom: 25px;
+  gap: 0; /* para que no se compriman */
+  justify-content: space-around;
+}
 
-  /* Tabla */
-  .historial {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
+/* Tab content */
+.pagos-container .tab-content {
+  padding: 15px 0;
+}
 
-  .historial th, .historial td {
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #eee;
-  }
+/* Inputs y selects */
+.pagos-container input,
+.pagos-container select {
+  width: 100%;
+  display: block;
+}
 
-  .estado.pendiente {
-    background: orange;
-    padding: 4px 10px;
-    border-radius: 8px;
-    color: #000;
-  }
+/* Botones centrados */
+.pagos-container .save-btn,
+#ir-metodos {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0 auto;
+}
 
-  .estado.realizado {
-    background: limegreen;
-    padding: 4px 10px;
-    border-radius: 8px;
-    color: #000;
-  }
+/* Barra superior dentro de pagos */
+.pagos-container .barra {
+  width: 100%;
+  background-color: rgba(86, 44, 29, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  margin-bottom: 25px;
+}
 
-  /* Botones */
-  .botones {
-    text-align: center;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
+.pagos-container .logo img {
+  height: 40px;
+}
 
-  .botones button {
-    padding: 10px 20px;
-    background: #4d2c21;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 15px;
-  }
+.pagos-container .acciones-barra a,
+.pagos-container .acciones-barra span {
+  color: #f0e5db;
+  font-size: 20px;
+  margin-left: 20px;
+  transition: all 0.3s;
+}
 
-  .botones button:hover {
-    background: #321d16;
-  }
+.pagos-container .acciones-barra a:hover,
+.pagos-container .acciones-barra span:hover {
+  transform: scale(1.1);
+  color: #da9c5f;
+}
 
-  /* Modal */
-  .modal {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
+/* Glass card dentro de pagos */
+.pagos-container .glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
 
-  .modal.hidden {
-    display: none;
-  }
+/* Buscador */
+.pagos-container .busqueda {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+  box-sizing: border-box;
+}
 
-  .modal-content {
-    width: 90%;
-    max-width: 400px;
-    padding: 30px 20px;
-    position: relative;
-    color: #fff;
-  }
+/* Tabla de historial */
+.pagos-container .historial {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
 
-  .modal .close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-  }
+.pagos-container .historial th,
+.pagos-container .historial td {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #eee;
+}
 
-  .modal-step {
-    text-align: center;
-  }
+.pagos-container .estado.pendiente {
+  background: orange;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #000;
+}
 
-  .modal-step.hidden {
-    display: none;
-  }
+.pagos-container .estado.realizado {
+  background: limegreen;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #000;
+}
 
-  .logo {
-    width: 60px;
-    margin-bottom: 10px;
-  }
+/* Botones */
+.pagos-container .botones {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
 
-  .bold {
-    font-weight: bold;
-    color: #5c3d2e;
-  }
+.pagos-container .botones button {
+  padding: 10px 20px;
+  background: #4d2c21;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
 
-  #ir-metodos {
-    margin-top: 20px;
-    background: #5c3d2e;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 20px;
-    font-size: 15px;
-    cursor: pointer;
-  }
+.pagos-container .botones button:hover {
+  background: #321d16;
+}
 
-  /* Métodos */
-  .metodos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin-top: 20px;
-  }
+/* Modal */
+.pagos-container .modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .metodo {
-    background: rgba(255,255,255,0.15);
-    border: none;
-    border-radius: 12px;
-    padding: 10px 15px;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    min-width: 130px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+.pagos-container .modal.hidden {
+  display: none;
+}
 
-  .metodo img {
-    width: 20px;
-  }
+.pagos-container .modal-content {
+  width: 90%;
+  max-width: 400px;
+  padding: 30px 20px;
+  position: relative;
+  color: #fff;
+}
+
+.pagos-container .modal .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.pagos-container .modal-step {
+  text-align: center;
+}
+
+.pagos-container .modal-step.hidden {
+  display: none;
+}
+
+/* Métodos de pago */
+.pagos-container .metodos {
+  justify-content: center;
+}
+
+.pagos-container .metodo {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  min-width: 130px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagos-container .metodo img {
+  width: 20px;
+}
+
+#ir-metodos {
+  margin-top: 20px;
+  background: #5c3d2e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
